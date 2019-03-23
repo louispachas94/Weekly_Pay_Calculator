@@ -1,0 +1,64 @@
+//
+//  ViewController.swift
+//  HW2_WeeklyPay_Louis_Pachas
+//
+//  Created by Daisy Torres on 3/11/19.
+//  Copyright © 2019 Louis Pachas. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var nameTxtField: UITextField!
+    
+    @IBOutlet weak var wageLabel: UILabel!
+    
+    
+    @IBOutlet weak var wageTxtField: UITextField!
+    
+    @IBOutlet weak var hoursLabel: UILabel!
+    
+    @IBOutlet weak var hoursTxtField: UITextField!
+    
+    @IBOutlet weak var answerCalculate: UILabel!
+    
+    
+    @IBAction func calculateClick(_ sender: UIButton) {
+        
+        let nameField = nameTxtField.text! + ""
+       
+        let wageStr = wageTxtField.text!
+        
+        let hoursStr = hoursTxtField.text!
+        // convert to double value
+        
+        let wageValue : Double = Double (wageStr)!
+        
+        let hoursValue : Double = Double (hoursStr)!
+        
+        let totalPay : Double = wageValue * hoursValue
+        
+        answerCalculate.text = nameField + " " + String(totalPay)
+        
+        
+        
+    }
+    
+    
+    
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+
+}
+
+
